@@ -1,184 +1,51 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amirhossein Bayat — Personal Website</title>
-  <meta name="description" content="PhD student at SDU working on topology optimization and CFD." />
-  <meta name="theme-color" content="#0ea5e9" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop stop-color='%230ea5e9'/%3E%3Cstop offset='1' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3Ccircle cx='50' cy='50' r='46' fill='url(%23g)'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='44' fill='white' font-family='Arial, Helvetica, sans-serif'%3EAB%3C/text%3E%3C/svg%3E" />
-  <style>
-    :root{
-      --bg:#0b1020; --panel:#0f172a; --card:#111827; --muted:#9ca3af; --text:#e5e7eb;
-      --accent:#38bdf8; --accent2:#8b5cf6; --ring:rgba(56,189,248,.35)
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 800px at 80% -10%, rgba(56,189,248,.12), transparent 50%), radial-gradient(1000px 700px at -10% 10%, rgba(139,92,246,.10), transparent 50%), var(--bg); color:var(--text); font:16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1080px;margin:0 auto;padding:24px}
-    /* Nav */
-    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(8px);}
-    .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid rgba(255,255,255,.06);border-radius:16px; background:rgba(17,24,39,.55); box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
-    .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 180deg at 50% 50%, var(--accent), var(--accent2)); box-shadow:0 0 0 3px rgba(56,189,248,.18)}
-    .nav a{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)}
-    .toggle{cursor:pointer;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.04)}
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center;margin:28px 0}
-    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 12px;color:var(--muted);background:rgba(255,255,255,.04)}
-    h1.title{font-size:clamp(2.1rem, 2.8vw + 1rem, 3.2rem);line-height:1.1;margin:10px 0 12px}
-    .grad{background:linear-gradient(90deg, var(--accent), var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{color:#cbd5e1;font-size:1.05rem}
-    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06)}
-    .btn.primary{background:linear-gradient(90deg, var(--accent), var(--accent2));border-color:transparent;color:white}
-    .kan{position:relative}
-    .kan::after{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;background:linear-gradient(90deg, rgba(56,189,248,.6), rgba(139,92,246,.6));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+{% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
+        <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
-    /* Sections */
-    section{margin:34px 0;padding:22px;border-radius:18px;background:rgba(17,24,39,.65);box-shadow:0 10px 30px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.06)}
-    h2{font-size:1.6rem;margin:0 0 12px}
-    .grid{display:grid;gap:16px}
-    .cols-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{padding:16px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.03);transition:transform .15s ease, box-shadow .15s ease}
-    .card:hover{transform:translateY(-3px); box-shadow:0 20px 40px rgba(0,0,0,.35)}
-    .pill{display:inline-block;padding:4px 10px;margin:4px 6px 0 0;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:.85rem}
-    .meta{color:var(--muted);font-size:.9rem}
+        <ul>
+          {% if site.show_downloads %}
+            <li class="download"><a class="buttons" href="{{ site.github.zip_url }}">Download ZIP</a></li>
+            <li class="download"><a class="buttons" href="{{ site.github.tar_url }}">Download TAR</a></li>
+          {% endif %}
+          <li><a class="buttons github" href="{{ site.github.repository_url }}">View On GitHub</a></li>
+        </ul>
 
-    /* Footer */
-    footer{color:var(--muted);text-align:center;margin:40px 0}
+        {% if site.github.is_project_page %}
+          <p class="header">This project is maintained by <a class="header name" href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
 
-    /* Light scheme */
-    @media (prefers-color-scheme: light){
-      html,body{background:#f8fafc;color:#0f172a}
-      section,.nav{background:#fff}
-      .pill,.btn,.nav a,.toggle{border-color:rgba(0,0,0,.06);background:rgba(0,0,0,.03)}
-      .meta{color:#475569}
-    }
-    /* Small screens */
-    @media (max-width: 840px){ .hero{grid-template-columns:1fr} }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- NAV -->
-    <header>
-      <div class="nav">
-        <div class="brand"><div class="logo" aria-hidden></div> <span>Amirhossein Bayat</span></div>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#publications">Publications</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <button class="toggle" id="themeToggle" title="Toggle theme">🌓</button>
-        </nav>
-      </div>
-    </header>
+        {% if site.github.is_user_page %}
+          <ul>
+            <li><a class="buttons github" href="{{ site.github.owner_url }}">GitHub Profile</a></li>
+          </ul>
+        {% endif %}
+      </header>
 
-    <!-- HERO -->
-    <section class="kan hero" id="about">
-      <div>
-        <span class="badge">PhD @ SDU • Topology Optimization • CFD</span>
-        <h1 class="title">Designing flow with <span class="grad">topology optimization</span> and reliable adjoint methods.</h1>
-        <p class="lead">I work on density‑based TO for Navier–Stokes, free‑slip boundary conditions, and RANS wall modeling. I care about well‑posed formulations, validation on body‑fitted meshes, and reproducible pipelines.</p>
-        <div class="cta">
-          <a class="btn primary" href="#publications">View publications</a>
-          <a class="btn" href="#projects">Explore projects</a>
-          <a class="btn" href="mailto:amir@example.com">Email me</a>
-        </div>
-        <div style="margin-top:12px" class="meta">Firedrake • COMSOL • MATLAB • FreeFEM • MMA • Adjoint sensitivities</div>
-      </div>
-      <div>
-        <div class="card" style="text-align:center">
-          <svg viewBox="0 0 200 200" style="width:100%" aria-hidden>
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop stop-color="#38bdf8"/><stop offset="1" stop-color="#8b5cf6"/>
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="90" fill="url(#g1)" opacity="0.12"/>
-            <text x="100" y="110" text-anchor="middle" font-size="54" fill="url(#g1)" font-weight="800">AB</text>
-          </svg>
-          <div class="meta">Available for collaborations, seminars, and research visits.</div>
-        </div>
-      </div>
-    </section>
+      <section>
+        {{ content }}
+      </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications">
-      <h2>Selected Publications</h2>
-      <div class="grid cols-2">
-        <article class="card">
-          <h3>Density‑based TO for Navier–Stokes with Free‑Slip BCs</h3>
-          <p class="meta">Preprint / under review</p>
-          <p>Brinkman penalization with implicit wall functions and adjoint sensitivities. Includes verification on body‑fitted meshes and mesh‑independence analysis.</p>
-          <p><a href="#">PDF</a> · <a href="#">Code</a> · <span class="pill">Free‑slip</span> <span class="pill">Adjoint</span> <span class="pill">Validation</span></p>
-        </article>
-        <article class="card">
-          <h3>Tesla‑Valve Topology Optimization (in prep.)</h3>
-          <p class="meta">Methodology & results</p>
-          <p>Directional loss ratio optimization with RANS wall modeling at high Reynolds numbers; robust to mesh resolution via continuation and projection.</p>
-          <p><span class="pill">High‑Re</span> <span class="pill">RANS</span> <span class="pill">MMA</span></p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>FreeFEM Navier–Stokes + Adjoint</h3>
-          <p>PSPG stabilization and adjoint sensitivities for laminar flow; validation against manufactured solutions.</p>
-          <p><a href="#">Repository</a></p>
-        </div>
-        <div class="card">
-          <h3>Firedrake TO Framework</h3>
-          <p>PDE filtering, Heaviside projection, MMA continuation; fluid + heat couplings with clean plotting utilities.</p>
-          <p><a href="#">Repository</a></p>
-        </div>
-        <div class="card">
-          <h3>COMSOL Utilities</h3>
-          <p>Weak‑form snippets, interpolation functions, and scripts for exporting body‑fitted validations.</p>
-          <p><a href="#">Docs</a></p>
-        </div>
-        <div class="card">
-          <h3>Reproducible Benchmarks</h3>
-          <p>Curated cases (double‑pipe, U‑bend, Tesla valve) with input decks and reference results.</p>
-          <p><a href="#">Benchmarks</a></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:amir@example.com">amir@example.com</a></p>
-      <p>Find me on <a href="https://github.com/your-username">GitHub</a>, <a href="#">Google Scholar</a>, and <a href="#">LinkedIn</a>.</p>
-      <div class="meta">To deploy: push this file as <code>index.html</code> to <code>bayat-amirhossein.github.io</code> and enable GitHub Pages.</div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Amirhossein Bayat — Built with plain HTML/CSS on GitHub Pages
-    </footer>
-  </div>
-
-  <button id="toTop" aria-label="Back to top" style="position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(17,24,39,.75);color:inherit;display:none">↑</button>
-
-  <script>
-    // Year
-    document.getElementById('y').textContent=new Date().getFullYear();
-    // Back to top
-    const toTop=document.getElementById('toTop');
-    window.addEventListener('scroll',()=>{ toTop.style.display = window.scrollY>260?'block':'none'; });
-    toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-    // Theme toggle (persist in localStorage)
-    const t=document.getElementById('themeToggle');
-    const apply=(m)=>{ document.documentElement.style.colorScheme=m; document.documentElement.dataset.theme=m; };
-    const saved=localStorage.getItem('theme'); if(saved) apply(saved);
-    t.addEventListener('click',()=>{ const cur=document.documentElement.dataset.theme|| (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); const next=cur==='dark'?'light':'dark'; apply(next); localStorage.setItem('theme',next); });
-  </script>
-</body>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
 </html>

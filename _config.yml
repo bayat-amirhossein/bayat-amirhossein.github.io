@@ -3,30 +3,23 @@
 # -----------------------------------------------------------------------------
 title: Amirhossein Bayat
 first_name: Amirhossein
+middle_name:
 last_name: Bayat
-
 contact_note: >
-  Email is best. I’m also reachable by phone on weekdays.
+  Best way to reach me is via GitHub issues or LinkedIn. (Update this later with your email if you want.)
 description: >
-  PhD candidate (SDU) in mechanical engineering. I work on density-based topology
-  optimization for fluid mechanics (TuTO), CFD (Navier–Stokes, RANS k-ε), and
-  adjoint sensitivities.
-
-# Contact + media
-email: "abay@sdu.dk"           # picked up by jekyll-email-protect
-phone: "+45 52 73 96 87"       # for About page/contact cards
-avatar: assets/img/amir-profile.jpg   # your portrait (used by About)
-og_image: assets/img/amir-og.jpg      # social preview (1200×630 recommended)
-
+  PhD candidate in Mechanical Engineering (SDU). I work on density-based topology
+  optimization for fluid mechanics (TuTO), CFD (Navier–Stokes, RANS k-ε), adjoint
+  sensitivities, and high-performance simulation workflows.
 footer_text: >
   © {{ "now" | date: "%Y" }} Amirhossein Bayat · Built with
   <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> +
   <a href="https://github.com/alshedivat/al-folio">al-folio</a> ·
   Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-
-keywords: topology optimization, CFD, Navier–Stokes, RANS k-epsilon, adjoint methods, SDU
+keywords: topology optimization, CFD, Navier–Stokes, RANS k-epsilon, adjoint methods, SDU, mechanical engineering, research
 lang: en
-icon: ⚛️
+icon: ️
+
 url: "https://bayat-amirhossein.github.io"
 baseurl: ""
 last_updated: true
@@ -35,7 +28,141 @@ back_to_top: true
 # -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
-max_width: 980px
-enable_navbar_social: true
+navbar_fixed: false
+footer_fixed: false
+search_enabled: true
+socials_in_search: true
+posts_in_search: false
+bib_search: true
+max_width: 980px  # a touch wider for figures/papers
+
+# -----------------------------------------------------------------------------
+# Open Graph & Schema.org
+# -----------------------------------------------------------------------------
 serve_og_meta: true
 serve_schema_org: true
+og_image: assets/img/og_site.png  # add a 1200x630 image at this path
+
+# -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
+blog_name: Research Notes
+blog_description: Experiments, results, and thoughts on CFD & topology optimization
+permalink: /blog/:year/:title/
+lsi: false
+pagination:
+  enabled: true
+related_blog_posts:
+  enabled: true
+  max_related: 5
+
+# Comments (Giscus)
+giscus:
+  repo: bayat-amirhossein/bayat-amirhossein.github.io
+  repo_id:
+  category: Comments
+  category_id:
+  mapping: title
+  strict: 1
+  reactions_enabled: 1
+  input_position: bottom
+  dark_theme: dark
+  light_theme: light
+  emit_metadata: 0
+  lang: en
+
+# Disqus (off)
+disqus_shortname:
+
+# External sources (optional – add later if you want)
+external_sources: []
+
+# -----------------------------------------------------------------------------
+# Optional Features
+# -----------------------------------------------------------------------------
+enable_math: true
+enable_darkmode: true
+enable_masonry: true
+enable_medium_zoom: true
+enable_progressbar: true
+enable_video_embedding: false
+enable_navbar_social: true   # show your social icons on About page
+
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+collections:
+  books:
+    output: true
+  news:
+    defaults:
+      layout: post
+    output: true
+  projects:
+    output: true
+
+# -----------------------------------------------------------------------------
+# Jekyll Scholar (Publications)
+# -----------------------------------------------------------------------------
+scholar:
+  last_name: [Bayat]
+  first_name: [Amirhossein, A.]
+  style: apa
+  locale: en
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  bibtex_filters: [latex, smallcaps, superscript]
+  replace_strings: true
+  join_strings: true
+  details_dir: bibliography
+  details_link: Details
+  query: "@*"
+  group_by: year
+  group_order: descending
+
+enable_publication_badges:
+  altmetric: true
+  dimensions: true
+  google_scholar: true
+  inspirehep: false
+
+filtered_bibtex_keywords:
+  [abbr, abstract, additional_info, altmetric, annotation, arxiv, award, award_name,
+   bibtex_show, blog, code, google_scholar_id, html, inspirehep_id, pdf, poster,
+   preview, selected, slides, supp, video, website]
+
+max_author_limit: 5
+more_authors_animation_delay: 10
+enable_publication_thumbnails: true
+
+# -----------------------------------------------------------------------------
+# Analytics & Verification (leave blank until you add IDs)
+# -----------------------------------------------------------------------------
+google_analytics:
+cronitor_analytics:
+pirsch_analytics:
+openpanel_analytics:
+google_site_verification:
+bing_site_verification:
+
+# -----------------------------------------------------------------------------
+# Link handling
+# -----------------------------------------------------------------------------
+external_links:
+  enabled: true
+  rel: external nofollow noopener
+  target: _blank
+
+# -----------------------------------------------------------------------------
+# Responsive Images
+# -----------------------------------------------------------------------------
+imagemagick:
+  enabled: true
+  widths: [480, 800, 1400]
+  input_directories: [assets/img/]
+  input_formats: [".jpg", ".jpeg", ".png", ".tiff", ".gif"]
+  output_formats:
+    webp: "-quality 85"
+
+lazy_loading_images: true

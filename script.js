@@ -9,6 +9,10 @@ carousels.forEach((carousel) => {
   let activeIndex = 0;
   let timerId;
 
+  if (slides.length === 0) {
+    return;
+  }
+
   const showSlide = (nextIndex) => {
     activeIndex = (nextIndex + slides.length) % slides.length;
 
@@ -32,15 +36,19 @@ carousels.forEach((carousel) => {
     startTimer();
   };
 
-  previousButton.addEventListener("click", () => {
-    showSlide(activeIndex - 1);
-    restartTimer();
-  });
+  if (previousButton) {
+    previousButton.addEventListener("click", () => {
+      showSlide(activeIndex - 1);
+      restartTimer();
+    });
+  }
 
-  nextButton.addEventListener("click", () => {
-    showSlide(activeIndex + 1);
-    restartTimer();
-  });
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      showSlide(activeIndex + 1);
+      restartTimer();
+    });
+  }
 
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {

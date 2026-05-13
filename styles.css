@@ -231,22 +231,24 @@ h3 {
 .project-card {
   display: flex;
   min-height: 520px;
+  overflow: hidden;
   flex-direction: column;
-  padding: 24px;
+  padding: 0;
 }
 
 .paper-carousel {
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 8px 8px 0 0;
   background: #edf4f1;
 }
 
 .paper-slides {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
 }
 
 .paper-slide {
@@ -322,14 +324,31 @@ h3 {
   display: flex;
   justify-content: space-between;
   gap: 16px;
+  padding: 22px 24px 0;
 }
 
 .project-topline a {
   color: var(--accent-dark);
 }
 
+.project-card h3,
+.project-card p,
+.project-card .tags {
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.project-card h3 {
+  margin-top: 10px;
+}
+
+.project-card p {
+  margin-bottom: 20px;
+}
+
 .tags {
   margin-top: auto;
+  padding-bottom: 24px;
 }
 
 .tags span,
@@ -495,9 +514,23 @@ h3 {
   }
 
   .hero-panel,
-  .resume-card,
-  .project-card {
+  .resume-card {
     padding: 20px;
+  }
+
+  .project-topline {
+    padding: 20px 20px 0;
+  }
+
+  .project-card h3,
+  .project-card p,
+  .project-card .tags {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .tags {
+    padding-bottom: 20px;
   }
 
   .site-footer {

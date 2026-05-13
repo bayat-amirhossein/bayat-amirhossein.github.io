@@ -396,6 +396,9 @@ h3 {
 }
 
 .heat-sink-copy h2 a {
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
   text-decoration: none;
 }
 

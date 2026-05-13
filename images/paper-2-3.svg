@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#fef3c7"/>
+  <rect x="160" y="210" width="880" height="90" rx="18" fill="#173834"/>
+  <rect x="160" y="350" width="410" height="260" rx="22" fill="#0f766e"/>
+  <rect x="630" y="350" width="410" height="260" rx="22" fill="#c6842c"/>
+  <text x="120" y="95" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#173834">Paper 02 - Image 3</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f0fdfa"/>
+  <rect x="210" y="190" width="780" height="520" rx="34" fill="#ffffff"/>
+  <circle cx="420" cy="450" r="96" fill="#0f766e"/>
+  <circle cx="600" cy="450" r="96" fill="#c6842c"/>
+  <circle cx="780" cy="450" r="96" fill="#173834"/>
+  <text x="120" y="95" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#173834">Paper 03 - Image 1</text>
+</svg>

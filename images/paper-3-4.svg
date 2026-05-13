@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#fff1f2"/>
+  <rect x="185" y="195" width="830" height="500" rx="28" fill="#ffffff"/>
+  <path d="M270 570 H930" stroke="#d9d4cb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M270 460 H810" stroke="#d9d4cb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M270 350 H900" stroke="#d9d4cb" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="360" cy="350" r="34" fill="#0f766e"/>
+  <circle cx="640" cy="460" r="34" fill="#c6842c"/>
+  <circle cx="860" cy="570" r="34" fill="#173834"/>
+  <text x="120" y="95" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#173834">Paper 03 - Image 4</text>
+</svg>

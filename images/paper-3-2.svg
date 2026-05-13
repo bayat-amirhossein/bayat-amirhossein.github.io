@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#faf5ff"/>
+  <path d="M250 630 Q600 120 950 630" fill="none" stroke="#0b4f49" stroke-width="36" stroke-linecap="round"/>
+  <path d="M310 630 Q600 280 890 630" fill="none" stroke="#c6842c" stroke-width="28" stroke-linecap="round"/>
+  <text x="120" y="95" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#173834">Paper 03 - Image 2</text>
+</svg>

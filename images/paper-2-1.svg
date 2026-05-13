@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#e0f2fe"/>
+  <path d="M180 640 L360 350 L540 500 L720 240 L1020 630" fill="none" stroke="#173834" stroke-width="38" stroke-linejoin="round"/>
+  <circle cx="360" cy="350" r="38" fill="#0f766e"/>
+  <circle cx="720" cy="240" r="38" fill="#c6842c"/>
+  <text x="120" y="95" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#173834">Paper 02 - Image 1</text>
+</svg>

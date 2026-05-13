@@ -375,7 +375,7 @@ h3 {
   color: white;
   background:
     linear-gradient(90deg, rgba(15, 30, 28, 0.92) 0%, rgba(15, 30, 28, 0.58) 48%, rgba(15, 30, 28, 0.12) 100%),
-    url("images/heat-sink-design.png");
+    url("images/heat-sink-design-3d.png");
   background-position: center;
   background-size: cover;
   box-shadow: var(--shadow);

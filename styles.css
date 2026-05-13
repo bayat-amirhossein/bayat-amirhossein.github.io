@@ -414,6 +414,33 @@ h3 {
   line-height: 1.7;
 }
 
+.heat-sink-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.heat-sink-downloads a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  padding: 0 16px;
+  color: #173834;
+  background: white;
+  font-size: 0.94rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.heat-sink-downloads a:hover {
+  background: var(--accent-soft);
+}
+
 .heat-sink-tags {
   display: flex;
   flex-wrap: wrap;

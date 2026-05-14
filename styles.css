@@ -252,12 +252,16 @@ h3 {
   background: #f8fafc;
 }
 
-.paper-image {
+.paper-image,
+.paper-video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
   padding: 10px;
+}
+
+.paper-image {
   transition: opacity 500ms ease;
 }
 
@@ -328,6 +332,10 @@ h3 {
 }
 
 .project-topline a {
+  color: var(--accent-dark);
+}
+
+.status-label {
   color: var(--accent-dark);
 }
 

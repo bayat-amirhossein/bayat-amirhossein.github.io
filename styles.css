@@ -526,7 +526,7 @@ h3 {
 }
 
 .conference-photo.is-talk img {
-  object-position: center 48%;
+  object-position: center bottom;
 }
 
 .conference-list {

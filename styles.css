@@ -186,6 +186,11 @@ h3 {
   display: grid;
   gap: 22px;
   padding: 28px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)),
+    url("images/bending-schematic.gif");
+  background-position: center;
+  background-size: cover;
 }
 
 .panel-label,

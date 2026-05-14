@@ -229,13 +229,13 @@ h3 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .project-card {
   display: flex;
-  min-height: 520px;
+  min-height: 610px;
   overflow: hidden;
   flex-direction: column;
   padding: 0;
@@ -245,7 +245,7 @@ h3 {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: clamp(190px, 22vw, 270px);
+  height: clamp(260px, 30vw, 380px);
   margin-bottom: 0;
   border-bottom: 1px solid var(--line);
   border-radius: 8px 8px 0 0;

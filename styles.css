@@ -508,10 +508,17 @@ h3 {
   background: rgba(21, 23, 26, 0.45);
 }
 
+.conference-photo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 18px;
+  margin: 0 0 30px;
+}
+
 .conference-photo {
   position: relative;
-  height: clamp(280px, 44vw, 520px);
-  margin: 0 0 30px;
+  height: clamp(260px, 30vw, 430px);
+  margin: 0;
   overflow: hidden;
   border-radius: 8px;
   background: #173834;
@@ -531,6 +538,10 @@ h3 {
   height: 100%;
   object-fit: cover;
   object-position: center 34%;
+}
+
+.conference-photo.is-talk img {
+  object-position: center 48%;
 }
 
 .conference-photo figcaption {
@@ -1022,6 +1033,14 @@ h3 {
   .conference-item {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .conference-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conference-photo {
+    height: clamp(250px, 58vw, 440px);
   }
 
   .visit-item {

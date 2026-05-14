@@ -66,15 +66,6 @@ a {
   font-size: 0.9rem;
 }
 
-.brand-photo {
-  width: 42px;
-  height: 42px;
-  border: 2px solid rgba(15, 118, 110, 0.2);
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 35%;
-}
-
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -103,37 +94,11 @@ main {
 
 .hero {
   display: grid;
-  grid-template-areas:
-    "poster copy"
-    "poster panel";
-  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
   gap: clamp(28px, 5vw, 64px);
   align-items: center;
   min-height: 76vh;
   padding: 72px 0 56px;
-}
-
-.hero-poster-visual {
-  grid-area: poster;
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.hero-poster-visual img {
-  display: block;
-  width: 100%;
-  height: clamp(460px, 64vh, 680px);
-  object-fit: cover;
-  object-position: center 42%;
-}
-
-.hero-copy {
-  grid-area: copy;
 }
 
 .eyebrow {
@@ -218,7 +183,6 @@ h3 {
 }
 
 .hero-panel {
-  grid-area: panel;
   display: grid;
   gap: 22px;
   padding: 28px;
@@ -586,16 +550,9 @@ h3 {
 
 @media (max-width: 860px) {
   .site-header,
+  .hero,
   .split-section,
   .contact-section {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    grid-template-areas:
-      "copy"
-      "poster"
-      "panel";
     grid-template-columns: 1fr;
   }
 
@@ -610,10 +567,6 @@ h3 {
   .hero {
     min-height: auto;
     padding-top: 48px;
-  }
-
-  .hero-poster-visual img {
-    height: clamp(360px, 90vw, 560px);
   }
 
   .project-grid {
@@ -650,12 +603,7 @@ h3 {
   }
 
   .brand {
-    align-items: center;
-  }
-
-  .brand-photo {
-    width: 36px;
-    height: 36px;
+    align-items: flex-start;
   }
 
   .nav a {
@@ -665,10 +613,6 @@ h3 {
 
   h1 {
     font-size: clamp(2.7rem, 17vw, 4.4rem);
-  }
-
-  .hero-poster-visual img {
-    height: clamp(320px, 104vw, 480px);
   }
 
   .hero-panel,

@@ -193,21 +193,6 @@ h3 {
   background-size: cover;
 }
 
-.hero-portrait {
-  width: min(180px, 48%);
-  aspect-ratio: 1 / 1;
-  justify-self: center;
-  border: 4px solid rgba(255, 255, 255, 0.88);
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 14px 32px rgba(21, 23, 26, 0.16);
-}
-
-.hero-panel-sections {
-  display: grid;
-  gap: 22px;
-}
-
 .panel-label,
 .project-topline,
 .resume-item span {
@@ -223,29 +208,6 @@ h3 {
   display: block;
   font-size: 1.05rem;
   line-height: 1.45;
-}
-
-.hero-research-shot {
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid rgba(21, 23, 26, 0.12);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.hero-research-shot img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center 35%;
-}
-
-.hero-research-shot figcaption {
-  padding: 12px 14px;
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 700;
 }
 
 .section {
@@ -656,10 +618,6 @@ h3 {
   .hero-panel,
   .resume-card {
     padding: 20px;
-  }
-
-  .hero-research-shot img {
-    height: 190px;
   }
 
   .project-topline {

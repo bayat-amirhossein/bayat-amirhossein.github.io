@@ -925,7 +925,14 @@ h3 {
   max-width: 620px;
 }
 
-.email-link {
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.contact-link {
   display: inline-flex;
   align-items: center;
   min-height: 46px;
@@ -1032,8 +1039,11 @@ h3 {
     text-align: left;
   }
 
-  .email-link {
-    justify-self: start;
+  .contact-links {
+    justify-content: flex-start;
+  }
+
+  .contact-link {
     white-space: normal;
   }
 }
